@@ -1,0 +1,31 @@
+{
+  "name": "tg-uploader-bot",
+  "version": "1.0.0",
+  "description": "Telegram Image Uploader Bot",
+  "main": "src/index.ts",
+  "author": "Maxim Belikov",
+  "scripts": {
+    "dev": "DEBUG=bot* dotenv -- nodemon -e ts -x ts-node src/index.ts",
+    "devWindows": "@powershell -Command $env:DEBUG='bot*';dotenv -- -- nodemon -e ts -x ts-node src/index.ts",
+    "build": "ncc build src/index.ts -o public -m",
+    "prettier": "prettier --write src/**/*.ts",
+    "lint": "tsc --noemit"
+  },
+  "dependencies": {
+    "@vercel/node": "^3.2.12",
+    "axios": "^1.7.7",
+    "dotenv-cli": "^7.4.2",
+    "form-data": "^4.0.0",
+    "telegraf": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.12",
+    "@types/node": "^22.5.4",
+    "@vercel/ncc": "^0.38.1",
+    "debug": "^4.3.7",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  }
+}
