@@ -7,7 +7,7 @@ const telegramBot = new Telegraf(BOT_TOKEN);
 telegramBot.command('start', startCommandReply());
 telegramBot.command('help', helpCommandReply());
 telegramBot.command('upload', async (ctx: Context) => {
-  const replyToMessage = (ctx as any).reply_to_message;
+  const replyToMessage = (ctx as any).message.reply_to_message;
   if (!replyToMessage) {
     ctx.reply('Відсутній реплай на картинку!');
     return;
